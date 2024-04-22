@@ -1,0 +1,16 @@
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use Halleck45\AstMetrics\AstMetricsProxy;
+
+$arguments = $_SERVER['argv'];
+array_shift($arguments); // Remove script name from arguments
+
+try {
+    $proxy = new AstMetricsProxy();
+    $proxy->run($arguments);
+} catch (Throwable $e) {
+    echo $e->getMessage();
+    exit(1);
+}
