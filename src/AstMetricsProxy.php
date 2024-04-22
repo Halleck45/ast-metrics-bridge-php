@@ -3,7 +3,6 @@
 namespace Halleck45\AstMetrics;
 
 use Exception;
-use Throwable;
 
 /**
  * This class is a proxy for the AST Metrics binary, for PHP
@@ -90,7 +89,7 @@ class AstMetricsProxy {
 
         $content = file_get_contents($downloadUrl);
         if ($content === false) {
-            error("Failed to download AST Metrics binary");
+            throw new Exception("Failed to download AST Metrics binary");
         }
 
         // Save the binary
@@ -114,8 +113,7 @@ class AstMetricsProxy {
             throw new Exception("Failed to get latest release information");
         }
 
-        $version = $latestRelease['tag_name'];
-        return $version;
+        return $latestRelease['tag_name'];
     }
 
 }

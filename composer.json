@@ -8,11 +8,17 @@
             "Halleck45\\AstMetrics\\": "src/"
         }
     },
+    "bin": [
+        "bin/ast-metrics"
+    ],
     "authors": [
         {
             "name": "Jean-François Lépine",
             "email": "lepinejeanfrancois@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-json": "*",
+      "php": ">=7.0"
+    }
 }
