@@ -11,7 +11,16 @@ composer require halleck45/ast-metrics
 ## Usage
 
 ```bash
-php vendor/bin/ast-metrics analyze src
+php vendor/bin/ast-metrics analyze --ci src
+```
+
+> [!NOTE]
+> Please note this limitation: when used via this project, only the non-interactive mode is available.
+
+## Updating the AST Metrics binary
+
+```bash
+php vendor/bin/ast-metrics self-update
 ```
 
 ## License

@@ -1,6 +1,12 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+if(isset($GLOBALS['_composer_bin_dir'])) {
+    // loaded from composer installed package
+    require_once $GLOBALS['_composer_bin_dir'] . '/../autoload.php';
+} else {
+    // loaded when cloned from git
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
 
 use Halleck45\AstMetrics\AstMetricsProxy;
 
